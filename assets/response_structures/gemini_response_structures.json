@@ -1,0 +1,386 @@
+{
+    "complete_schema": {
+        "type": "object",
+        "properties": {
+            "geospatial_information": {
+                "type": "object",
+                "properties": {
+                    "country": {
+                        "type": "string",
+                        "description": "The country."
+                    },
+                    "state_or_province": {
+                        "type": "string",
+                        "description": "The state or province."
+                    },
+                    "city": {
+                        "type": "string",
+                        "description": "The city."
+                    },
+                    "reasoning": {
+                        "type": "string",
+                        "description": "Reasoning for the geospatial information."
+                    }
+                },
+                "required": [
+                    "country",
+                    "state_or_province",
+                    "city",
+                    "reasoning"
+                ]
+            },
+            "temporal_information": {
+                "type": "object",
+                "properties": {
+                    "century": {
+                        "type": "string",
+                        "description": "The century."
+                    },
+                    "decade": {
+                        "type": "string",
+                        "description": "The decade."
+                    },
+                    "year": {
+                        "type": "string",
+                        "description": "The year."
+                    },
+                    "month": {
+                        "type": "string",
+                        "description": "The month."
+                    },
+                    "day": {
+                        "type": "string",
+                        "description": "The day."
+                    },
+                    "time_of_day": {
+                        "type": "string",
+                        "description": "The time of day in the temporal information."
+                    },
+                    "reasoning": {
+                        "type": "string",
+                        "description": "Reasoning for the temporal information."
+                    }
+                },
+                "required": [
+                    "century",
+                    "decade",
+                    "year",
+                    "month",
+                    "day",
+                    "time_of_day",
+                    "reasoning"
+                ]
+            },
+            "event_information": {
+                "type": "object",
+                "properties": {
+                    "event": {
+                        "type": "object",
+                        "properties": {
+                            "value": {
+                                "type": "string",
+                                "description": "The value of the event."
+                            },
+                            "reasoning": {
+                                "type": "string",
+                                "description": "Reasoning for the event information."
+                            }
+                        },
+                        "required": [
+                            "value",
+                            "reasoning"
+                        ]
+                    },
+                    "background": {
+                        "type": "object",
+                        "properties": {
+                            "value": {
+                                "type": "string",
+                                "description": "The background value of the event."
+                            },
+                            "reasoning": {
+                                "type": "string",
+                                "description": "Reasoning for the background information."
+                            }
+                        },
+                        "required": [
+                            "value",
+                            "reasoning"
+                        ]
+                    }
+                },
+                "required": [
+                    "event",
+                    "background"
+                ]
+            }
+        },
+        "required": [
+            "geospatial_information",
+            "temporal_information",
+            "event_information"
+        ]
+    },
+    "scene_graph_schema": {
+        "type": "object",
+        "properties": {
+            "entities": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "entity": {
+                            "type": "string",
+                            "description": "The name of the entity."
+                        },
+                        "attributes": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "attribute": {
+                                        "type": "string",
+                                        "description": "The attribute key."
+                                    },
+                                    "value": {
+                                        "type": "string",
+                                        "description": "The value of the attribute."
+                                    }
+                                },
+                                "required": [
+                                    "attribute",
+                                    "value"
+                                ]
+                            },
+                            "description": "A list of attributes for the entity."
+                        }
+                    },
+                    "required": [
+                        "entity",
+                        "attributes"
+                    ]
+                },
+                "description": "A list of entities."
+            },
+            "relationships": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "relationship": {
+                            "type": "string",
+                            "description": "The type of relationship."
+                        },
+                        "reasoning": {
+                            "type": "string",
+                            "description": "Reasoning behind the relationship."
+                        }
+                    },
+                    "required": [
+                        "relationship",
+                        "reasoning"
+                    ]
+                },
+                "description": "A list of relationships."
+            }
+        },
+        "required": [
+            "entities",
+            "relationships"
+        ]
+    },
+    "abstract_schema": {
+        "type": "object",
+        "properties": {
+            "idea": {
+                "type": "string",
+                "description": "The value of the idea."
+            },
+            "reasoning": {
+                "type": "string",
+                "description": "Reasoning behind the idea."
+            }
+        },
+        "required": [
+            "idea",
+            "reasoning"
+        ],
+        "description": "The abstract idea represented by an idea and its reasoning."
+    },
+    "prompt_schema": {
+        "type": "object",
+        "properties": {
+            "global_event_specialist": {
+                "type": "object",
+                "properties": {
+                    "prompt": {
+                        "type": "string",
+                        "description": "The prompt for the global event specialist."
+                    },
+                    "reasoning": {
+                        "type": "string",
+                        "description": "Reasoning for the global event specialist prompt."
+                    }
+                },
+                "required": [
+                    "prompt",
+                    "reasoning"
+                ],
+                "description": "Information about the global event specialist prompt."
+            },
+            "temporal_specialist": {
+                "type": "object",
+                "properties": {
+                    "prompt": {
+                        "type": "string",
+                        "description": "The prompt for the temporal specialist."
+                    },
+                    "reasoning": {
+                        "type": "string",
+                        "description": "Reasoning for the temporal specialist prompt."
+                    }
+                },
+                "required": [
+                    "prompt",
+                    "reasoning"
+                ],
+                "description": "Information about the temporal specialist prompt."
+            },
+            "geospatial_specialist": {
+                "type": "object",
+                "properties": {
+                    "prompt": {
+                        "type": "string",
+                        "description": "The prompt for the spatial specialist."
+                    },
+                    "reasoning": {
+                        "type": "string",
+                        "description": "Reasoning for the spatial specialist prompt."
+                    }
+                },
+                "required": [
+                    "prompt",
+                    "reasoning"
+                ],
+                "description": "Information about the spatial specialist prompt."
+            }
+        },
+        "required": [
+            "global_event_specialist",
+            "temporal_specialist",
+            "geospatial_specialist"
+        ]
+    },
+    "global_event_schema": {
+        "type": "object",
+        "properties": {
+            "event": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "string",
+                        "description": "The value of the global event."
+                    },
+                    "reasoning": {
+                        "type": "string",
+                        "description": "The reasoning behind the event."
+                    }
+                },
+                "required": [
+                    "value",
+                    "reasoning"
+                ],
+                "description": "Details about the event."
+            },
+            "background": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "string",
+                        "description": "The background value of the event."
+                    },
+                    "reasoning": {
+                        "type": "string",
+                        "description": "The reasoning for the background."
+                    }
+                },
+                "required": [
+                    "value",
+                    "reasoning"
+                ],
+                "description": "Details about the background of the event."
+            }
+        },
+        "required": [
+            "event",
+            "background"
+        ],
+        "description": "Schema representing a global event and its background reasoning."
+    },
+    "temporal_schema": {
+        "type": "object",
+        "properties": {
+            "century": {
+                "type": "string",
+                "description": "The century of the temporal information."
+            },
+            "decade": {
+                "type": "string",
+                "description": "The decade of the temporal information."
+            },
+            "year": {
+                "type": "string",
+                "description": "The year of the temporal information."
+            },
+            "month": {
+                "type": "string",
+                "description": "The month of the temporal information."
+            },
+            "day": {
+                "type": "string",
+                "description": "The day of the temporal information."
+            },
+            "reasoning": {
+                "type": "string",
+                "description": "The reasoning behind the temporal information."
+            }
+        },
+        "required": [
+            "century",
+            "decade",
+            "year",
+            "month",
+            "day",
+            "reasoning"
+        ],
+        "description": "Schema representing temporal information, including reasoning."
+    },
+    "geospatial_schema": {
+        "type": "object",
+        "properties": {
+            "country": {
+                "type": "string",
+                "description": "The country in the geospatial information."
+            },
+            "state_or_province": {
+                "type": "string",
+                "description": "The state or province in the geospatial information."
+            },
+            "city": {
+                "type": "string",
+                "description": "The city in the geospatial information."
+            },
+            "reasoning": {
+                "type": "string",
+                "description": "The reasoning behind the geospatial information."
+            }
+        },
+        "required": [
+            "country",
+            "state_or_province",
+            "city",
+            "reasoning"
+        ],
+        "description": "Schema representing geospatial information, including reasoning."
+    }
+}

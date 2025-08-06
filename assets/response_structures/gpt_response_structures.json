@@ -1,0 +1,439 @@
+{
+    "complete_model": {
+        "name": "complete_information",
+        "description": "Represents the detailed event information including geospatial and temporal data.",
+        "strict": true,
+        "schema": {
+            "type": "object",
+            "properties": {
+                "event_information": {
+                    "type": "object",
+                    "description": "Information about the event and its background.",
+                    "properties": {
+                        "event": {
+                            "type": "object",
+                            "description": "Details about the event.",
+                            "properties": {
+                                "value": {
+                                    "type": "string",
+                                    "description": "The main event description."
+                                },
+                                "reasoning": {
+                                    "type": "string",
+                                    "description": "Reasoning behind identifying this event."
+                                }
+                            },
+                            "required": [
+                                "value",
+                                "reasoning"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "background": {
+                            "type": "object",
+                            "description": "Contextual background related to the event.",
+                            "properties": {
+                                "value": {
+                                    "type": "string",
+                                    "description": "Background information related to the event."
+                                },
+                                "reasoning": {
+                                    "type": "string",
+                                    "description": "Explanation of the background's relevance."
+                                }
+                            },
+                            "required": [
+                                "value",
+                                "reasoning"
+                            ],
+                            "additionalProperties": false
+                        }
+                    },
+                    "required": [
+                        "event",
+                        "background"
+                    ],
+                    "additionalProperties": false
+                },
+                "geospatial_information": {
+                    "type": "object",
+                    "description": "Geospatial details of where the event took place.",
+                    "properties": {
+                        "country": {
+                            "type": "string",
+                            "description": "The country where the event occurred."
+                        },
+                        "state_or_province": {
+                            "type": "string",
+                            "description": "The state or province where the event occurred."
+                        },
+                        "city": {
+                            "type": "string",
+                            "description": "The city where the event occurred."
+                        },
+                        "reasoning": {
+                            "type": "string",
+                            "description": "Justification for the given location details."
+                        }
+                    },
+                    "required": [
+                        "country",
+                        "state_or_province",
+                        "city",
+                        "reasoning"
+                    ],
+                    "additionalProperties": false
+                },
+                "temporal_information": {
+                    "type": "object",
+                    "description": "Temporal details of when the event took place.",
+                    "properties": {
+                        "century": {
+                            "type": "string",
+                            "description": "The century in which the event occurred."
+                        },
+                        "decade": {
+                            "type": "string",
+                            "description": "The decade in which the event occurred."
+                        },
+                        "year": {
+                            "type": "string",
+                            "description": "The year in which the event occurred."
+                        },
+                        "month": {
+                            "type": "string",
+                            "description": "The month in which the event occurred."
+                        },
+                        "day": {
+                            "type": "string",
+                            "description": "The day on which the event occurred."
+                        },
+                        "reasoning": {
+                            "type": "string",
+                            "description": "Justification for the provided temporal details."
+                        }
+                    },
+                    "required": [
+                        "century",
+                        "decade",
+                        "year",
+                        "month",
+                        "day",
+                        "reasoning"
+                    ],
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "event_information",
+                "geospatial_information",
+                "temporal_information"
+            ]
+        }
+    },
+    "scene_graph_model": {
+        "name": "scene_graph_information",
+        "description": "Represents a structured scene graph containing entities, their attributes, and relationships.",
+        "strict": true,
+        "schema": {
+            "type": "object",
+            "properties": {
+                "entities": {
+                    "type": "array",
+                    "description": "List of entities present in the scene.",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "entity": {
+                                "type": "string",
+                                "description": "The name of the entity."
+                            },
+                            "attributes": {
+                                "type": "array",
+                                "description": "List of attributes associated with the entity.",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "attribute": {
+                                            "type": "string",
+                                            "description": "The attribute name."
+                                        },
+                                        "value": {
+                                            "type": "string",
+                                            "description": "The value of the attribute."
+                                        }
+                                    },
+                                    "required": [
+                                        "attribute",
+                                        "value"
+                                    ],
+                                    "additionalProperties": false
+                                }
+                            }
+                        },
+                        "required": [
+                            "entity",
+                            "attributes"
+                        ],
+                        "additionalProperties": false
+                    }
+                },
+                "relationships": {
+                    "type": "array",
+                    "description": "List of relationships between entities.",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "relationship": {
+                                "type": "string",
+                                "description": "The relationship between entities."
+                            },
+                            "reasoning": {
+                                "type": "string",
+                                "description": "Explanation of why this relationship exists."
+                            }
+                        },
+                        "required": [
+                            "relationship",
+                            "reasoning"
+                        ],
+                        "additionalProperties": false
+                    }
+                }
+            },
+            "required": [
+                "entities",
+                "relationships"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "temporal_model": {
+        "name": "temporal_information",
+        "description": "Represents the temporal information of the image.",
+        "strict": true,
+        "schema": {
+            "type": "object",
+            "description": "Temporal details of when the event took place.",
+            "properties": {
+                "century": {
+                    "type": "string",
+                    "description": "The century in which the event occurred."
+                },
+                "decade": {
+                    "type": "string",
+                    "description": "The decade in which the event occurred."
+                },
+                "year": {
+                    "type": "string",
+                    "description": "The year in which the event occurred."
+                },
+                "month": {
+                    "type": "string",
+                    "description": "The month in which the event occurred."
+                },
+                "day": {
+                    "type": "string",
+                    "description": "The day on which the event occurred."
+                },
+                "reasoning": {
+                    "type": "string",
+                    "description": "Justification for the provided temporal details."
+                }
+            },
+            "required": [
+                "century",
+                "decade",
+                "year",
+                "month",
+                "day",
+                "reasoning"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "geospatial_model": {
+        "name": "geospatial_information",
+        "description": "Represents the geospatial information of the image.",
+        "strict": true,
+        "schema": {
+            "type": "object",
+            "description": "Geospatial details of where the event took place.",
+            "properties": {
+                "country": {
+                    "type": "string",
+                    "description": "The country where the event occurred."
+                },
+                "state_or_province": {
+                    "type": "string",
+                    "description": "The state or province where the event occurred."
+                },
+                "city": {
+                    "type": "string",
+                    "description": "The city where the event occurred."
+                },
+                "reasoning": {
+                    "type": "string",
+                    "description": "Justification for the given location details."
+                }
+            },
+            "required": [
+                "country",
+                "state_or_province",
+                "city",
+                "reasoning"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "abstract_model": {
+        "name": "abstract_idea",
+        "description": "Represents the abstract idea of the image.",
+        "strict": true,
+        "schema": {
+            "type": "object",
+            "properties": {
+                "idea": {
+                    "type": "string",
+                    "description": "The main abstract idea."
+                },
+                "reasoning": {
+                    "type": "string",
+                    "description": "Explanation of why this idea is relevant or significant."
+                }
+            },
+            "required": [
+                "idea",
+                "reasoning"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "prompt_model": {
+        "name": "custom_prompts",
+        "description": "Contains the custom prompts for different agents",
+        "strict": true,
+        "schema": {
+            "type": "object",
+            "properties": {
+                "global_event_specialist": {
+                    "type": "object",
+                    "description": "Prompt for the global event specialist.",
+                    "properties": {
+                        "prompt": {
+                            "type": "string",
+                            "description": "The prompt provided for the global event specialist."
+                        },
+                        "reasoning": {
+                            "type": "string",
+                            "description": "Explanation of why this prompt was chosen."
+                        }
+                    },
+                    "required": [
+                        "prompt",
+                        "reasoning"
+                    ],
+                    "additionalProperties": false
+                },
+                "temporal_specialist": {
+                    "type": "object",
+                    "description": "Prompt for the temporal specialist.",
+                    "properties": {
+                        "prompt": {
+                            "type": "string",
+                            "description": "The prompt provided for the temporal specialist."
+                        },
+                        "reasoning": {
+                            "type": "string",
+                            "description": "Explanation of why this prompt was chosen."
+                        }
+                    },
+                    "required": [
+                        "prompt",
+                        "reasoning"
+                    ],
+                    "additionalProperties": false
+                },
+                "geospatial_specialist": {
+                    "type": "object",
+                    "description": "Prompt for the geospatial specialist.",
+                    "properties": {
+                        "prompt": {
+                            "type": "string",
+                            "description": "The prompt provided for the geospatial specialist."
+                        },
+                        "reasoning": {
+                            "type": "string",
+                            "description": "Explanation of why this prompt was chosen."
+                        }
+                    },
+                    "required": [
+                        "prompt",
+                        "reasoning"
+                    ],
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "global_event_specialist",
+                "temporal_specialist",
+                "geospatial_specialist"
+            ]
+        }
+    },
+    "global_event_model": {
+        "name": "event_information",
+        "description": "Represents the information about the global event in the image",
+        "strict": true,
+        "schema": {
+            "type": "object",
+            "properties": {
+                "event": {
+                    "type": "object",
+                    "description": "Details about the main event.",
+                    "properties": {
+                        "value": {
+                            "type": "string",
+                            "description": "The main event description."
+                        },
+                        "reasoning": {
+                            "type": "string",
+                            "description": "Reasoning behind identifying this event."
+                        }
+                    },
+                    "required": [
+                        "value",
+                        "reasoning"
+                    ],
+                    "additionalProperties": false
+                },
+                "background": {
+                    "type": "object",
+                    "description": "Contextual background related to the event.",
+                    "properties": {
+                        "value": {
+                            "type": "string",
+                            "description": "Background information related to the event."
+                        },
+                        "reasoning": {
+                            "type": "string",
+                            "description": "Explanation of the background's relevance."
+                        }
+                    },
+                    "required": [
+                        "value",
+                        "reasoning"
+                    ],
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "event",
+                "background"
+            ]
+        }
+    }
+}

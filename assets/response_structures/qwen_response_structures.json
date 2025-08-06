@@ -1,0 +1,94 @@
+{
+    "scene_graph_structure": {
+        "entities": [
+            {
+                "entity": "string",
+                "attributes": [
+                    {
+                        "attribute": "string",
+                        "value": "string"
+                    }
+                ]
+            }
+        ],
+        "relationships": [
+            {
+                "relationship": {
+                    "value": "string",
+                    "reasoning": "string"
+                }
+            }
+        ]
+    },
+    "global_event_structure": {
+        "event": {
+            "value": "string",
+            "reasoning": "string"
+        },
+        "background": {
+            "value": "string",
+            "reasoning": "string"
+        }
+    },
+    "temporal_structure": {
+        "century": "string",
+        "decade": "string",
+        "year": "string",
+        "month": "string",
+        "day": "string",
+        "reasoning": "string"
+    },
+    "geospatial_structure": {
+        "country": "string",
+        "state_or_province": "string",
+        "city": "string",
+        "reasoning": "string"
+    },
+    "abstract_structure": {
+        "abstract_idea": {
+            "idea": "string",
+            "reasoning": "string"
+        }
+    },
+    "prompt_structure": {
+        "global_event_specialist": {
+            "prompt": "string",
+            "reasoning": "string"
+        },
+        "temporal_specialist": {
+            "prompt": "string",
+            "reasoning": "string"
+        },
+        "geospatial_specialist": {
+            "prompt": "string",
+            "reasoning": "string"
+        }
+    },
+    "complete_structure": {
+        "event_information": {
+            "background": {
+                "reasoning": "string",
+                "value": "string"
+            },
+            "event": {
+                "reasoning": "string",
+                "value": "string"
+            }
+        },
+        "geospatial_information": {
+            "city": "string",
+            "country": "string",
+            "reasoning": "string",
+            "state_or_province": "string"
+        },
+        "temporal_information": {
+            "century": "string",
+            "day": "string",
+            "decade": "string",
+            "month": "string",
+            "reasoning": "string",
+            "time_of_day": "string",
+            "year": "string"
+        }
+    }
+}
