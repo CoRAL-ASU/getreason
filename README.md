@@ -10,6 +10,12 @@
 
 [Paper](https://aclanthology.org/2025.acl-long.1439/) | [arXiv](https://arxiv.org/abs/2505.21863) | [Code](./code/) | [Dataset](./code/dataset/)
 
+### 📋 Additional Resources
+
+- **📊 [Presentation Slides](https://docs.google.com/presentation/d/1UtUWE3_PSAT6RmpjAil7PZXGMpil456_/edit?usp=sharing&ouid=106492274501693178273&rtpof=true&sd=true)** - ACL 2025 Presentation
+- **🎥 [Video Presentation](https://drive.google.com/file/d/1sLM8x3x8X3K25oSMJl0gukmUWuRAc3Jc/view?usp=drive_link)** - Conference Video
+- **📄 [Poster](https://drive.google.com/file/d/1EcWrWB0Mo_Y0vFhIXce9dRORGmdhcVeh/view?usp=drive_link)** - Research Poster
+
 </div>
 
 ---
