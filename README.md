@@ -28,11 +28,13 @@ GETReason is a novel framework that goes beyond surface-level image descriptions
 
 ## 🏗️ Architecture
 
-GETReason employs a structured workflow:
+<div align="center">
 
-1. **Scene Graph Generation** → **Abstract Generation** → **Combined Object**
-2. **Custom Prompt Generation** → **Specialist Agents (Round 1)**
-3. **Cross-Generation** → **Specialist Agents (Round 2)** → **Final Output**
+![GETReason Architecture](./src/assets/images/diagrams/GETReason_architecture.drawio_1.png)
+
+*GETReason's hierarchical multi-agent reasoning framework*
+
+</div>
 
 ### Agent Specialization
 
