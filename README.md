@@ -37,7 +37,7 @@ GETReason employs a structured workflow:
 ### Agent Specialization
 
 - **🌍 Geospatial Agent**: Infers location, country, city, and geographic context
-- **⏰ Temporal Agent**: Extracts dates, periods, and historical context  
+- **⏰ Temporal Agent**: Extracts dates, periods, and historical context
 - **🎭 Event Agent**: Identifies events, political significance, and sociopolitical context
 
 ## 📊 Results
@@ -86,11 +86,13 @@ cd code
 We provide two augmented datasets with comprehensive annotations:
 
 ### TARA Dataset
+
 - **Size**: 11,240 samples
 - **Content**: Rich event information with reasoning
 - **Coverage**: News events from 2010-2021
 
-### WikiTilo Dataset  
+### WikiTilo Dataset
+
 - **Size**: 6,296 samples
 - **Content**: Temporal and geospatial information
 - **Coverage**: Historical events from 1826-2021
@@ -129,13 +131,14 @@ If you use this work in your research, please cite:
 ## 👥 Authors
 
 - **Shikhhar Siingh** - Arizona State University
-- **Abhinav Rawat** - Arizona State University  
+- **Abhinav Rawat** - Arizona State University
 - **Chitta Baral** - Arizona State University
 - **Vivek Gupta** - Arizona State University
 
 ## 📞 Contact
 
 For questions, issues, or collaboration inquiries:
+
 - **Shikhhar Siingh**: ssiingh@asu.edu
 - **Abhinav Rawat**: arawat11@asu.edu
 
@@ -147,9 +150,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-**GETReason: Unlocking the Contextual Power of Event Images**
+**GETReason: Enhancing Image Context Extraction through Hierarchical Multi-Agent Reasoning**
 
 [![ACL 2025](https://img.shields.io/badge/ACL-2025-blue)](https://aclanthology.org/2025.acl-long.1439/)
 [![arXiv](https://img.shields.io/badge/arXiv-2505.21863-b31b1b)](https://arxiv.org/abs/2505.21863)
 
-</div> 
+</div>
