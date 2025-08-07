@@ -140,7 +140,7 @@ If you use this work in your research, please cite:
 For questions, issues, or collaboration inquiries:
 
 - **Shikhhar Siingh**: ssiingh@asu.edu
-- **Abhinav Rawat**: arawat11@asu.edu
+- **Abhinav Rawat**: arawat21@asu.edu
 
 ## 📄 License
 

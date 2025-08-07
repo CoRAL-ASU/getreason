@@ -170,6 +170,7 @@ getreason/code/
 This repository includes two augmented datasets with comprehensive gold-standard annotations:
 
 ### 📰 TARA Dataset (`gold_tara.jsonl`)
+
 - **📈 Size**: 11,240 samples
 - **📋 Content**: Rich event information including:
   - Event descriptions and reasoning
@@ -179,6 +180,7 @@ This repository includes two augmented datasets with comprehensive gold-standard
   - Temporal information (century, decade, year, month, day)
 
 ### 📚 WikiTilo Dataset (`gold_wikitilo.jsonl`)
+
 - **📈 Size**: 6,296 samples
 - **📋 Content**: Focused on temporal and geospatial information:
   - Temporal information (century, decade, year, month, day)
@@ -227,8 +229,9 @@ If you use this code, datasets, or findings from our work in your research, plea
 ## 📞 Contact
 
 For questions, issues, or collaboration inquiries, please contact the authors:
+
 - **Shikhhar Siingh**: ssiingh@asu.edu
-- **Abhinav Rawat**: arawat11@asu.edu
+- **Abhinav Rawat**: arawat21@asu.edu
 
 ---
 

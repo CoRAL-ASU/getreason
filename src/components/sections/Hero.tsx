@@ -47,18 +47,18 @@ export const Hero: React.FC = () => {
             <div className="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white mb-6">
               <span className="text-sm font-medium">ACL 2025 Main Conference</span>
             </div>
-            
+
             <h1 className="text-white mb-6 leading-tight">
               <span className="block font-light">GETReason:</span>
               <span className="block">Enhancing Image Context Extraction through Hierarchical Multi-Agent Reasoning</span>
             </h1>
-            
+
             <p className="text-gray-100 text-lg mb-8 max-w-2xl mx-auto lg:mx-0">
               A novel framework that moves beyond surface-level image descriptions to infer deeper contextual meaning through geospatial, event, and temporal reasoning.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a 
+              <a
                 href="https://github.com/CoRAL-ASU/getreason?tab=readme-ov-file"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -73,7 +73,7 @@ export const Hero: React.FC = () => {
                   →
                 </motion.span>
               </a>
-              <a 
+              <a
                 href="https://aclanthology.org/2025.acl-long.1439/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -83,7 +83,7 @@ export const Hero: React.FC = () => {
               </a>
             </div>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -92,9 +92,9 @@ export const Hero: React.FC = () => {
           >
             <div className="relative bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 shadow-xl">
               <div className="aspect-w-16 aspect-h-9 relative group">
-                <img 
-                  src={architectureDiagram} 
-                  alt="GETReason Architecture Diagram - Multi-agent reasoning framework" 
+                <img
+                  src={architectureDiagram}
+                  alt="GETReason Architecture Diagram - Multi-agent reasoning framework"
                   className="rounded-lg object-contain w-full h-full transition-transform duration-500 group-hover:scale-105"
                 />
 
@@ -105,7 +105,7 @@ export const Hero: React.FC = () => {
                   {isPlaying ? <Pause size={20} className="text-white" /> : <Play size={20} className="text-white" />}
                 </button>
               </div>
-              
+
               <div className="grid grid-cols-3 gap-2 mt-4">
                 {agents.map((agent) => (
                   <motion.div
@@ -120,7 +120,7 @@ export const Hero: React.FC = () => {
                 ))}
               </div>
             </div>
-            
+
             {/* Interactive Agent Info Panel */}
             <AnimatePresence>
               {activeAgent && (
@@ -144,14 +144,14 @@ export const Hero: React.FC = () => {
                 </motion.div>
               )}
             </AnimatePresence>
-            
+
             {/* Decorative elements */}
             <div className="absolute -top-6 -right-6 w-20 h-20 bg-secondary-500/30 rounded-full blur-xl"></div>
             <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-primary-600/30 rounded-full blur-xl"></div>
           </motion.div>
         </div>
       </div>
-      
+
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
         <motion.div
