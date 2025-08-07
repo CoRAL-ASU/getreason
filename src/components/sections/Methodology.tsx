@@ -104,54 +104,54 @@ export const Methodology: React.FC = () => {
   const workflowSteps = [
     {
       id: 1,
-      title: "Scene Graph Generation",
-      description: "Extract structured representations of visual relationships, objects, and attributes from input images",
+      title: "Context Generation",
+      description: "Generate scene graphs and abstract ideas from visual input for comprehensive understanding",
       icon: Network,
       color: "from-blue-500 to-blue-600",
       details: [
-        "Object detection and classification",
-        "Relationship identification",
-        "Attribute extraction",
-        "Spatial layout analysis"
+        "Scene graph construction",
+        "Abstract idea extraction",
+        "Visual relationship mapping",
+        "Spatial context analysis"
       ]
     },
     {
       id: 2,
-      title: "Multi-Agent Initialization",
-      description: "Deploy specialized agents with domain-specific knowledge and reasoning capabilities",
-      icon: Users,
+      title: "Prompt Generation",
+      description: "Create specialized prompts based on context for targeted reasoning tasks",
+      icon: MessageSquare,
       color: "from-purple-500 to-purple-600",
       details: [
-        "Geospatial reasoning agent",
-        "Temporal analysis agent", 
-        "Event detection agent",
-        "Context integration agent"
+        "Context-aware prompt design",
+        "Task-specific instruction crafting",
+        "Multi-modal prompt integration",
+        "Dynamic prompt optimization"
       ]
     },
     {
       id: 3,
-      title: "Hierarchical Reasoning",
-      description: "Execute coordinated reasoning across multiple abstraction levels with inter-agent communication",
-      icon: Brain,
+      title: "Multi-Agent Generation",
+      description: "Deploy specialist agents with domain expertise for coordinated reasoning",
+      icon: Users,
       color: "from-green-500 to-green-600",
       details: [
-        "Local feature analysis",
-        "Cross-modal attention",
-        "Agent communication protocols",
-        "Consensus building mechanisms"
+        "Geospatial reasoning specialist",
+        "Temporal analysis specialist",
+        "Event detection specialist",
+        "Context integration specialist"
       ]
     },
     {
       id: 4,
-      title: "Context Synthesis",
-      description: "Integrate multi-agent outputs into comprehensive contextual understanding",
-      icon: GitMerge,
+      title: "Evaluation using GREAT",
+      description: "Apply comprehensive evaluation framework for multi-dimensional reasoning assessment",
+      icon: Target,
       color: "from-orange-500 to-orange-600",
       details: [
-        "Information fusion algorithms",
-        "Conflict resolution strategies",
-        "Confidence scoring",
-        "Final context generation"
+        "Geospatial reasoning evaluation",
+        "Event accuracy assessment",
+        "Temporal alignment scoring",
+        "Multi-dimensional metric computation"
       ]
     }
   ];
@@ -193,8 +193,8 @@ export const Methodology: React.FC = () => {
             <h2 className="text-gray-900 mb-6">Methodology</h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto mb-8"></div>
             <p className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
-              GETReason introduces a revolutionary hierarchical multi-agent reasoning framework that transforms 
-              image understanding through coordinated specialist agents, advanced scene graph analysis, and 
+              GETReason introduces a revolutionary hierarchical multi-agent reasoning framework that transforms
+              image understanding through coordinated specialist agents, advanced scene graph analysis, and
               sophisticated context extraction mechanisms.
             </p>
           </motion.div>
@@ -214,20 +214,19 @@ export const Methodology: React.FC = () => {
               Our framework operates through four coordinated stages, each optimized for specific aspects of visual reasoning
             </p>
           </div>
-          
+
           <div className="relative max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-stretch gap-4">
               {workflowSteps.map((step, index) => (
-              <motion.div
+                <motion.div
                   key={step.id}
                   initial={{ opacity: 0, y: 30 }}
                   animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={`relative bg-white rounded-xl shadow-lg p-6 border-2 transition-all duration-300 flex-1 min-h-[280px] ${
-                    activeWorkflowStep === index 
-                      ? 'border-primary-500 shadow-primary-500/20 shadow-xl' 
-                      : 'border-gray-200 hover:border-gray-300'
-                  }`}
+                  className={`relative bg-white rounded-xl shadow-lg p-6 border-2 transition-all duration-300 flex-1 min-h-[280px] ${activeWorkflowStep === index
+                    ? 'border-primary-500 shadow-primary-500/20 shadow-xl'
+                    : 'border-gray-200 hover:border-gray-300'
+                    }`}
                   onClick={() => setActiveWorkflowStep(index)}
                 >
                   <div className={`bg-gradient-to-br ${step.color} rounded-full p-4 w-16 h-16 flex items-center justify-center mb-4 mx-auto`}>
@@ -235,16 +234,16 @@ export const Methodology: React.FC = () => {
                   </div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-2 text-center">{step.title}</h4>
                   <p className="text-gray-600 text-sm text-center mb-4">{step.description}</p>
-                
-                <AnimatePresence>
+
+                  <AnimatePresence>
                     {activeWorkflowStep === index && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
-                    >
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
                         <div className="border-t border-gray-200 pt-4">
                           <ul className="space-y-1">
                             {step.details.map((detail, idx) => (
@@ -258,7 +257,7 @@ export const Methodology: React.FC = () => {
                       </motion.div>
                     )}
                   </AnimatePresence>
-                  
+
                   {/* Arrow connector for desktop */}
                   {index < workflowSteps.length - 1 && (
                     <div className="hidden md:block absolute top-1/2 -right-6 transform -translate-y-1/2 z-10">
@@ -267,7 +266,7 @@ export const Methodology: React.FC = () => {
                       </div>
                     </div>
                   )}
-                  
+
                   {/* Arrow connector for mobile */}
                   {index < workflowSteps.length - 1 && (
                     <div className="md:hidden flex justify-center mt-4">
@@ -276,23 +275,23 @@ export const Methodology: React.FC = () => {
                       </div>
                     </div>
                   )}
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
             </div>
           </div>
         </motion.div>
-          
+
         {/* GREAT Evaluation Metric */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-200"
         >
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">GREAT Evaluation Framework</h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Our comprehensive Geospatial Reasoning and Event Accuracy with Temporal Alignment (GREAT) metric 
+              Our comprehensive Geospatial Reasoning and Event Accuracy with Temporal Alignment (GREAT) metric
               provides multi-dimensional evaluation of visual reasoning capabilities
             </p>
           </div>
@@ -315,7 +314,7 @@ export const Methodology: React.FC = () => {
                   {equations[currentSlide].content}
                 </motion.div>
               </AnimatePresence>
-              
+
               {/* Navigation buttons */}
               <button
                 onClick={prevSlide}
@@ -329,46 +328,45 @@ export const Methodology: React.FC = () => {
               >
                 <ChevronRight className="h-5 w-5 text-gray-600" />
               </button>
-              
+
               {/* Slide indicators */}
               <div className="flex justify-center space-x-3 mt-6">
                 {equations.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentSlide(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      index === currentSlide 
-                        ? 'bg-primary-500 scale-125' 
-                        : 'bg-gray-300 hover:bg-gray-400'
-                    }`}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide
+                      ? 'bg-primary-500 scale-125'
+                      : 'bg-gray-300 hover:bg-gray-400'
+                      }`}
                   />
                 ))}
               </div>
             </div>
-              </div>
-              
+          </div>
+
           {/* Metric Details */}
-                <div>
+          <div>
             <div className="flex items-center justify-between mb-6">
               <h4 className="text-xl font-semibold">Evaluation Components</h4>
-                    <button
-                      onClick={() => setShowMetricDetails(!showMetricDetails)}
+              <button
+                onClick={() => setShowMetricDetails(!showMetricDetails)}
                 className="flex items-center gap-2 text-primary-600 hover:text-primary-700 transition-colors font-medium"
-                    >
+              >
                 {showMetricDetails ? 'Hide Details' : 'Show Details'}
-                      {showMetricDetails ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-                    </button>
-                </div>
-                
-                <AnimatePresence>
-                  {showMetricDetails && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
+                {showMetricDetails ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+              </button>
+            </div>
+
+            <AnimatePresence>
+              {showMetricDetails && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.4 }}
-                      className="overflow-hidden"
-                    >
+                  className="overflow-hidden"
+                >
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl border border-blue-200">
                       <h5 className="font-semibold text-blue-900 mb-4 flex items-center">
@@ -394,60 +392,60 @@ export const Methodology: React.FC = () => {
                         </li>
                       </ul>
                     </div>
-                    
+
                     <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl border border-purple-200">
                       <h5 className="font-semibold text-purple-900 mb-4 flex items-center">
                         <Zap className="h-5 w-5 mr-2" />
                         Event Relevance
                       </h5>
                       <ul className="text-sm text-purple-800 space-y-2">
-                            <li className="flex items-center">
+                        <li className="flex items-center">
                           <div className="w-2 h-2 rounded-full bg-purple-500 mr-3"></div>
                           News event detection
-                            </li>
-                            <li className="flex items-center">
+                        </li>
+                        <li className="flex items-center">
                           <div className="w-2 h-2 rounded-full bg-purple-500 mr-3"></div>
                           Social context analysis
-                            </li>
-                            <li className="flex items-center">
+                        </li>
+                        <li className="flex items-center">
                           <div className="w-2 h-2 rounded-full bg-purple-500 mr-3"></div>
                           Semantic similarity matching
-                            </li>
-                            <li className="flex items-center">
+                        </li>
+                        <li className="flex items-center">
                           <div className="w-2 h-2 rounded-full bg-purple-500 mr-3"></div>
                           Cultural significance assessment
-                            </li>
-                          </ul>
-                        </div>
-                        
+                        </li>
+                      </ul>
+                    </div>
+
                     <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl border border-green-200">
                       <h5 className="font-semibold text-green-900 mb-4 flex items-center">
                         <Workflow className="h-5 w-5 mr-2" />
                         Temporal Coherence
                       </h5>
                       <ul className="text-sm text-green-800 space-y-2">
-                            <li className="flex items-center">
+                        <li className="flex items-center">
                           <div className="w-2 h-2 rounded-full bg-green-500 mr-3"></div>
                           Multi-scale time analysis
-                            </li>
-                            <li className="flex items-center">
+                        </li>
+                        <li className="flex items-center">
                           <div className="w-2 h-2 rounded-full bg-green-500 mr-3"></div>
                           Chronological consistency
-                            </li>
-                            <li className="flex items-center">
+                        </li>
+                        <li className="flex items-center">
                           <div className="w-2 h-2 rounded-full bg-green-500 mr-3"></div>
                           Historical context integration
-                            </li>
-                            <li className="flex items-center">
+                        </li>
+                        <li className="flex items-center">
                           <div className="w-2 h-2 rounded-full bg-green-500 mr-3"></div>
                           Temporal relationship modeling
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </motion.div>
 
@@ -477,7 +475,7 @@ export const Methodology: React.FC = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="space-y-4">
               <div className="flex items-center gap-3 mb-4">
                 <HardDrive className="h-8 w-8 text-green-400" />
@@ -498,7 +496,7 @@ export const Methodology: React.FC = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="space-y-4">
               <div className="flex items-center gap-3 mb-4">
                 <Server className="h-8 w-8 text-purple-400" />
