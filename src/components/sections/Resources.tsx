@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FileText, Database, Code, Download, ExternalLink } from 'lucide-react';
+import { FileText, Database, Code, Download, ExternalLink, Presentation, Video, Image } from 'lucide-react';
 
 export const Resources: React.FC = () => {
   const [ref, inView] = useInView({
@@ -22,7 +22,7 @@ export const Resources: React.FC = () => {
       title: 'Code Repository',
       description: 'GitHub repository with implementation and examples',
       icon: <Code className="h-6 w-6" />,
-              link: 'https://github.com/CoRAL-ASU/getreason?tab=readme-ov-file',
+      link: 'https://github.com/CoRAL-ASU/getreason?tab=readme-ov-file',
       buttonText: 'View on GitHub',
       buttonIcon: <ExternalLink className="h-4 w-4 ml-2" />,
     },
@@ -30,8 +30,32 @@ export const Resources: React.FC = () => {
       title: 'Dataset',
       description: 'Access the annotated dataset used in our experiments',
       icon: <Database className="h-6 w-6" />,
-              link: 'https://github.com/CoRAL-ASU/getreason?tab=readme-ov-file',
+      link: 'https://github.com/CoRAL-ASU/getreason?tab=readme-ov-file',
       buttonText: 'Access Dataset',
+      buttonIcon: <ExternalLink className="h-4 w-4 ml-2" />,
+    },
+    {
+      title: 'Presentation Slides',
+      description: 'ACL 2025 presentation slides and materials',
+      icon: <Presentation className="h-6 w-6" />,
+      link: 'https://docs.google.com/presentation/d/1UtUWE3_PSAT6RmpjAil7PZXGMpil456_/edit?usp=sharing&ouid=106492274501693178273&rtpof=true&sd=true',
+      buttonText: 'View Slides',
+      buttonIcon: <ExternalLink className="h-4 w-4 ml-2" />,
+    },
+    {
+      title: 'Video Presentation',
+      description: 'Conference video presentation and demo',
+      icon: <Video className="h-6 w-6" />,
+      link: 'https://drive.google.com/file/d/1sLM8x3x8X3K25oSMJl0gukmUWuRAc3Jc/view?usp=drive_link',
+      buttonText: 'Watch Video',
+      buttonIcon: <ExternalLink className="h-4 w-4 ml-2" />,
+    },
+    {
+      title: 'Research Poster',
+      description: 'ACL 2025 research poster and visual materials',
+      icon: <Image className="h-6 w-6" />,
+      link: 'https://drive.google.com/file/d/1EcWrWB0Mo_Y0vFhIXce9dRORGmdhcVeh/view?usp=drive_link',
+      buttonText: 'View Poster',
       buttonIcon: <ExternalLink className="h-4 w-4 ml-2" />,
     },
   ];
@@ -71,7 +95,7 @@ export const Resources: React.FC = () => {
           variants={containerVariants}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
-                      className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
         >
           {resources.map((resource, index) => (
             <motion.div
@@ -86,8 +110,8 @@ export const Resources: React.FC = () => {
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold mb-2">{resource.title}</h3>
                   <p className="text-gray-600 mb-4">{resource.description}</p>
-                  <a 
-                    href={resource.link} 
+                  <a
+                    href={resource.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-white bg-black hover:bg-gray-900 rounded-lg px-4 py-2 text-sm font-medium transition-colors"
