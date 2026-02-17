@@ -141,10 +141,8 @@ If you use this work in your research, please cite:
 
 ## 📞 Contact
 
-For questions, issues, or collaboration inquiries:
-
-- **Shikhhar Siingh**: ssiingh@asu.edu
-- **Abhinav Rawat**: arawat21@asu.edu
+For questions, or issues, or collaboration:
+- **Vivek Gupta**: vgupt140@asu.edu
 
 ## 📄 License
 
